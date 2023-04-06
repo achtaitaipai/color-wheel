@@ -37,7 +37,7 @@ svg:where(:hover, :focus-within) polygon:not(:where(:hover, :focus)) {
 }
 
 svg:not(:hover, :focus-within) + #color-name {
-  display: none;
+  opacity: 0;
 }
 
 #color-name {
