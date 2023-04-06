@@ -13,11 +13,9 @@ const radius = 512;
 const cx = radius;
 const cy = radius;
 
-const svg = document.querySelector("svg");
-const styleSheet = document.styleSheets[0];
-
 // TODO: Select-able color categories, re-render wheel.
 function renderWheel() {
+  const svg = document.getElementById("polygons-wrapper");
   let colorsBySite = {};
   let sites = [];
   Object.entries(colors).forEach(([name, color], _) => {
@@ -27,7 +25,8 @@ function renderWheel() {
     // Based on https://stackoverflow.com/a/54522007/91238 .
     // I've tweaked it to spread out some of the colors (especially they greys)
     // that don't fit well into a true H/S wheel.
-    let colorRadius = (s + v / 5) * 0.75 * radius;
+    // let colorRadius = (s + v / 5) * 0.75 * radius;
+    let colorRadius = s * radius;
     let colorAngle = (h / 360) * 2 * Math.PI;
 
     let x = Math.cos(colorAngle) * colorRadius + cx;
@@ -52,7 +51,6 @@ function renderWheel() {
 
     let c = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
     c.setAttribute("data-color", colorName);
-    // c.setAttribute("mask", "url(#circle-mask)");
 
     let points = "";
     cell.halfedges.forEach((edge) => {

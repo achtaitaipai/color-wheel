@@ -18,7 +18,6 @@ body {
 }
 
 svg {
-  clip-path: circle(50% at center);
   width: 80vmin;
   grid-row: 2;
 }
@@ -26,9 +25,8 @@ polygon {
   cursor: pointer;
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
-  stroke-width: 1px;
   fill: rgb(var(--color));
-  stroke: black;
+  stroke: currentColor;
   outline: 0;
 }
 

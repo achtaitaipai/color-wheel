@@ -9,7 +9,21 @@
     version="1.1"
     viewbox="0 0 1024 1024"
     xmlns="http://www.w3.org/2000/svg"
-  ></svg>
+  >
+    <mask id="myMask">
+      <rect x="0" y="0" width="100%" height="100%" fill="black" />
+      <circle cx="50%" cy="50%" r="50%" fill="white" />
+    </mask>
+    <g id="polygons-wrapper" mask="url(#myMask)"></g>
+    <circle
+      cx="50%"
+      cy="50%"
+      r="50%"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+    />
+  </svg>
 
   <span id="color-name">&nbsp;</span>
   <!-- https://github.com/gorhill/Javascript-Voronoi -->
